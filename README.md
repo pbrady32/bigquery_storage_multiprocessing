@@ -36,7 +36,7 @@ git clone https://github.com/pbrady32/bigquery_storage_multiprocessing.git
 cd bigquery_storage_multiprocessing/
 ```
 
-At this point, set the **project_id** variable in the multiproc_git_test.py script before running the next line of code. 
+At this point, set the **project_id** variable in the ```multiproc_git_test.py``` script before running the next line of code. 
 
 ```
 python multiproc_git_test.py
