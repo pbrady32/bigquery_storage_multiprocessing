@@ -47,7 +47,7 @@ At this point, you should see that the processes start, but before they can fini
 
 ## For future reference - OpenSSL error
 
-Also tried this on Ubuntu 20.04 LTS. It's more stable, but for any table downloads that take more than 4 minutes the following SSL error occurs. Also, segfaults still appear...though less frequently than in Ubuntu 16.04
+Also tried this on Ubuntu 20.04 LTS. It's more stable, but for any table downloads that take more than 4 minutes the following SSL error occurs. Also, segfaults still appear...though far more sporadically than in Ubuntu 16.04
 
 ```
 >E1120 20:37:00.681342250    1725 ssl_transport_security.cc:507] Corruption detected.
