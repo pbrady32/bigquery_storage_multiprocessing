@@ -2,12 +2,23 @@
 
 Installation
 
-Create a Google Cloud Compute instance using the Ubuntu 16.04 LTS image
+1. Create a Google Cloud Compute instance using the Google Ubuntu 16.04 LTS image. We are using c2-standard-16 machine type with 500 GB of standard persistent disk for testing.
 
-Run the following commands once connected
-    apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
-    wget https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh
-
+2. Run the following commands once connected via SSH
+```
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+chmod +x Anaconda3-2020.11-Linux-x86_64.sh 
+./Anaconda3-2020.11-Linux-x86_64.sh - installed using defaults
+```
+Change out <your_user>
+```
+eval "$(/home/<your_user>/anaconda3/bin/conda shell.bash hook)"
+conda create --name testing python=3.8
+conda activate testing
+pip install google-cloud-bigquery-storage[fastavro]
+gh repo clone pbrady32/bigquery_storage_multiprocessing
+```
 
 SSL error
 
