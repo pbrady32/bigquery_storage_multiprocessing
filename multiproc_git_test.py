@@ -1,4 +1,4 @@
-# Start script with python -Xfaulthandler to use below
+# Start script with python -Xfaulthandler
 import faulthandler
 faulthandler.enable()
 from google.cloud.bigquery_storage import BigQueryReadClient
@@ -8,8 +8,6 @@ import psutil
 import csv
 from datetime import datetime
 
-
-# Populate our constant variables
 # TODO(developer): Set the project_id variable.
 # project_id = 'my-gc-project'
 
@@ -56,8 +54,6 @@ if __name__ == '__main__':
     )
 
     requested_session.table = table
-    # This API can also deliver data serialized in Apache Arrow format.
-    # This example leverages Apache Avro.
     requested_session.data_format = types.DataFormat.AVRO
 
     # We limit the output columns to a subset of those allowed in the table
@@ -67,10 +63,6 @@ if __name__ == '__main__':
     session = client.create_read_session(
         parent=parent,
         read_session=requested_session,
-        timeout=10000,
-        # We'll use only a single stream for reading data from the table. However,
-        # if you wanted to fan out multiple readers you could do so by having a
-        # reader process each individual stream.
         max_stream_count=ncpus,
     )
 
