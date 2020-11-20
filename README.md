@@ -39,7 +39,7 @@ cd bigquery_storage_multiprocessing/
 At this point, set the **project_id** variable in the ```multiproc_git_test.py``` script before running the next line of code. 
 
 ```
-python multiproc_git_test.py
+python -Xfaulthandler multiproc_git_test.py
 ```
 
 At this point, you should see that the processes start, but before they can finish working a segfault *should* occur. 
